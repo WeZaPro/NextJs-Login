@@ -15,11 +15,14 @@ export default NextAuth({
       },
       async authorize(credentials, req) {
         // const res = await fetch(`${process.env.URL_API}+/signup`, {
-        const res = await fetch("https://mern-api-yp9k.onrender.com/api", {
-          method: "POST",
-          body: JSON.stringify(credentials),
-          headers: { "Content-Type": "application/json" },
-        });
+        const res = await fetch(
+          "https://mern-api-yp9k.onrender.com/api/signup",
+          {
+            method: "POST",
+            body: JSON.stringify(credentials),
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         const data = await res.json();
         console.log("date---> ", data);
 
