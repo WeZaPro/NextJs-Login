@@ -14,7 +14,8 @@ export default NextAuth({
         password1: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        const res = await fetch(`${process.env.URL_API}+/signup`, {
+        // const res = await fetch(`${process.env.URL_API}+/signup`, {
+        const res = await fetch("https://mern-api-yp9k.onrender.com/api", {
           method: "POST",
           body: JSON.stringify(credentials),
           headers: { "Content-Type": "application/json" },
